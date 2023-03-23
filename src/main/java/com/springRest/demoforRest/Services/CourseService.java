@@ -9,4 +9,6 @@ public interface CourseService {
 public List<Course> getCourses();
 public Course getCourse(long courseId);
 public Course addCourse(Course course);
+public String removeCourse(int parseInt);
+public Course putCourse(Long courseId,String courseTitle,String CourseDescription);
 }

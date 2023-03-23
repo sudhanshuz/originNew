@@ -44,5 +44,30 @@ public class CourseServiceImpl implements CourseService {
 		return course;
 	}
 
+	@Override
+	public String removeCourse(int id) {
+		// TODO Auto-generated method stub
+		for(Course course:list) {
+			if(course.getId()==id) {
+				list.remove(course);
+				return "deleted successfully";
+			}
+		}
+		return "not deleted";
+	}
+
+	@Override
+	public Course putCourse(Long courseId,String courseTitle,String courseDescription) {
+		// TODO Auto-generated method stub
+		for(Course course:list) {
+			if(course.getId()==courseId) {
+				course.setTitle(courseTitle);
+				course.setDescription(courseDescription);
+				return course;
+			}
+		}
+		return null;
+	}
+
 	
 }
